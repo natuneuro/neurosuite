@@ -1,0 +1,19 @@
+#ifndef NEUROSUITE_EXPORT_H
+#define NEUROSUITE_EXPORT_H
+
+#include <QtCore/qglobal.h>
+
+# ifdef NEUROSUITE_STATICLIB
+#  undef NEUROSUITE_SHAREDLIB
+#  define NEUROSUITE_EXPORT
+# else
+#  ifdef NEUROSUITE_BUILD_NEUROSUITE_LIB
+#   define NEUROSUITE_EXPORT Q_DECL_EXPORT
+#  else
+#   define NEUROSUITE_EXPORT Q_DECL_IMPORT
+#  endif
+# endif
+
+
+
+#endif // NEUROSUITE_EXPORT_H
